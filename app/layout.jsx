@@ -2,6 +2,7 @@ import Nav from "@components/Nav";
 import Provider from "@components/Provider";
 import "@styles/globals.css";
 import { Suspense } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   title: "Promptopia",
@@ -20,7 +21,8 @@ const RootLayout = ({ children }) => {
           <main className="app">
             <Nav />
             <Suspense fallback={<div>Loading...</div>}>
-              { children }
+              {children}
+              <SpeedInsights />
             </Suspense>
           </main>
         </Provider>
